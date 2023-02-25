@@ -1,0 +1,17 @@
+{{ define "title"}} {{ .Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+
+{{ define "main" }}
+
+<div id="hero" class="container">
+  <h1>Topics</h1>
+  <ul class="list-unstyled" id="article-titles">
+    {{ range .Paginator.Pages.ByWeight }} {{ partial "page-summary" . }} {{ end }}
+  </ul>
+  <section>{{ partial "pagination" .}}</section>
+</div>
+
+{{ end }} 
+{{ define "footer" }} 
+  {{ partial "footer" .}} 
+{{ end }}

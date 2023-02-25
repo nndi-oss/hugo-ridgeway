@@ -1,0 +1,9 @@
+<li itemscope itemtype="http://schema.org/CreativeWork">
+    <h2 class="title">
+        <a href="{{ .Permalink }}" class="nav-link" itemprop="headline">{{ .Title }}</a>
+    </h2>
+    {{ if .Description }}
+    <p itemprop="about">{{ .Description }}</p>
+    {{ end }}
+    <hr>
+</li>

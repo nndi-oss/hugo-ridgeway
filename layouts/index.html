@@ -1,0 +1,66 @@
+{{ define "title"}} {{ .Site.Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+{{ define "main"}}
+    <div class="hero py-5 text-center bg-dark" style="background-image:url('https://images.pexels.com/photos/7709018/pexels-photo-7709018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+        <h1 class="text-6xl text-white">{{ .Site.Title }}</h1>
+        
+        <div class="cta py-5">
+            <div class="text-center py-5">
+                <a href="{{ "docs/getting-started" | relURL }}" class="btn btn-lg btn-primary">Get Started</a>&nbsp;
+                <a href="{{ "docs" | relURL }}" class="btn btn-lg btn-primary">Documentation</a>
+            </div>
+        </div>
+    </div>
+    <div class="hero text-center h-20rem">
+        <h1 class="text-6xl">Features</h1>
+        <div class="row">
+           <div class="col-sm-12 col-md-3">
+            <div class="p-card surface-section m-2 p-4">
+                Feature 1
+            </div>
+           </div>
+           <div class="col-sm-12 col-md-3">
+            <div class="p-card surface-section m-2 p-4">
+                Feature 1
+            </div>
+           </div>
+           <div class="col-sm-12 col-md-3">
+            <div class="p-card surface-section m-2 p-4">
+                Feature 1
+            </div>
+           </div>
+           <div class="col-sm-12 col-md-3">
+            <div class="p-card surface-section m-2 p-4">
+                Feature 1
+            </div>
+           </div>
+        </div>
+    </div>
+    <div class="hero text-center h-20rem">
+        <h1 class="text-6xl">Trusted By Developers </h1>
+        <div class="row">
+           <div class="col-sm-12 col-md-3">
+            <div class="p-card surface-section m-2 p-4">
+                Testimonial 1
+            </div>
+           </div>
+           <div class="col-sm-12 col-md-3">
+            <div class="p-card surface-section m-2 p-4">
+                Testimonial 1
+            </div>
+           </div>
+           <div class="col-sm-12 col-md-3">
+            <div class="p-card surface-section m-2 p-4">
+                Testimonial 1
+            </div>
+           </div>
+           <div class="col-sm-12 col-md-3">
+            <div class="p-card surface-section m-2 p-4">
+                Testimonial 1
+            </div>
+           </div>
+        </div>
+    </div>
+
+{{ end }}
+{{ define "footer"}} {{ partial "footer" .}} {{end}}

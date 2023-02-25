@@ -1,0 +1,28 @@
+<div class="py-5 mt-5 bg-light ">
+  <div class="row grid-nogutter container">
+    <div class="col-sm-12 col-md-4">
+      <p>Built in Malawi by <br /><a href="https://nndi.cloud">NNDI Ltd</a>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <ul class="nav-list">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="https://github.com/{{.Site.Params.github}}">GitHub</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/{{.Site.Params.twitter}}">Follow us on Twitter</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <ul>
+        {{ $currentPage := . }}
+        {{ range first 3 .Site.Menus.footer }}
+        <li><a href="{{ .URL }}" {{if $currentPage.IsMenuCurrent "main" . }} class="active" {{end}}>{{ .Name }}</a></li>
+        {{end}}
+      </ul>
+    </div>
+  </div>
+</div>
