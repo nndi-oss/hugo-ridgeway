@@ -1,66 +1,69 @@
 {{ define "title"}} {{ .Site.Title}} {{end}}
 {{ define "header"}} {{ partial "header" .}} {{end}}
 {{ define "main"}}
-    <div class="hero py-5 text-center bg-dark" style="background-image:url('https://images.pexels.com/photos/7709018/pexels-photo-7709018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
-        <h1 class="text-6xl text-white">{{ .Site.Title }}</h1>
-        
-        <div class="cta py-5">
+<div class="hero ">
+    <div class="vh-100 py-5 text-center bg-dark"
+        style="background: url('{{ .Site.Params.cover_image }}') center;">
+        <div class="col-sm-12 col-md-6 offset-md-3">
+            <h1 class="title">{{ .Site.Title }}</h1>
+            <h4 class="description">{{ .Site.Params.cta_description  }}</h4>
+        </div>
+        <div class="cta mt-10">
             <div class="text-center py-5">
-                <a href="{{ "docs/getting-started" | relURL }}" class="btn btn-lg btn-primary">Get Started</a>&nbsp;
-                <a href="{{ "docs" | relURL }}" class="btn btn-lg btn-primary">Documentation</a>
+                <a href="{{ .Site.Params.cta_getting_started | relURL }}" class="btn btn-lg btn-primary">Get Started</a>&nbsp;
+                <a href="{{ .Site.Params.cta_documentation | relURL }}" class="btn btn-lg btn-primary">Documentation</a>
             </div>
         </div>
     </div>
-    <div class="hero text-center h-20rem">
-        <h1 class="text-6xl">Features</h1>
-        <div class="row">
-           <div class="col-sm-12 col-md-3">
-            <div class="p-card surface-section m-2 p-4">
-                Feature 1
-            </div>
-           </div>
-           <div class="col-sm-12 col-md-3">
-            <div class="p-card surface-section m-2 p-4">
-                Feature 1
-            </div>
-           </div>
-           <div class="col-sm-12 col-md-3">
-            <div class="p-card surface-section m-2 p-4">
-                Feature 1
-            </div>
-           </div>
-           <div class="col-sm-12 col-md-3">
-            <div class="p-card surface-section m-2 p-4">
-                Feature 1
-            </div>
-           </div>
-        </div>
+</div>
+
+{{ if .Site.Params.Features.enabled }}
+<!-- features -->
+<div class="container mt-4 mb-4 features-container">
+    <div class="row text-center">
+        <h1 class="rw-title">Features</h1>
     </div>
-    <div class="hero text-center h-20rem">
-        <h1 class="text-6xl">Trusted By Developers </h1>
-        <div class="row">
-           <div class="col-sm-12 col-md-3">
-            <div class="p-card surface-section m-2 p-4">
-                Testimonial 1
+    <div class="row">
+        {{- $features := .Site.Params.Features.Entries }}
+        {{- range $features }}
+        <div class="col-sm-12 col-md-3 mt-4">
+            <div class="card h-100">
+                <div class="card-body text-6xl text-center">
+                    <p class="fs-1">
+                        <i class="{{ .icon }}"></i>
+                    </p>
+                    <h2>{{ .title | markdownify }}</h2>
+                </div>
+                <div class="card-body">
+                    <p class="icon-box-text">{{ .description | markdownify }}</p>
+                </div>
             </div>
-           </div>
-           <div class="col-sm-12 col-md-3">
-            <div class="p-card surface-section m-2 p-4">
-                Testimonial 1
-            </div>
-           </div>
-           <div class="col-sm-12 col-md-3">
-            <div class="p-card surface-section m-2 p-4">
-                Testimonial 1
-            </div>
-           </div>
-           <div class="col-sm-12 col-md-3">
-            <div class="p-card surface-section m-2 p-4">
-                Testimonial 1
-            </div>
-           </div>
         </div>
+        {{- end }}
     </div>
+</div><!-- /features -->
+{{ end}}
+
+{{ if .Site.Params.testimonials.enabled }}
+<div class="container mb-4">
+    <div class="row text-center">
+        <h1 class="rw-title">Trusted by Developers and CTOs</h1>
+    </div>
+    <div class="row">
+        {{- $testimonials := .Site.Params.Testimonials.Entries }}
+        {{- range $testimonials }}
+        <div class="col-sm-12 col-md-6 mt-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4>{{ .name }}</h4>
+                    <p class="icon-box-text">{{ .description | markdownify }}</p>
+                </div>
+            </div>
+        </div>
+        {{- end }}
+    </div>
+</div>
+{{ end }}
 
 {{ end }}
 {{ define "footer"}} {{ partial "footer" .}} {{end}}

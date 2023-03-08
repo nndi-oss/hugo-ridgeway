@@ -1,0 +1,65 @@
+:root {
+    --rw-primary-color: rgb(0, 109, 242);
+    --white-500: rgb(219, 219, 219);
+    --grey-500: rgb(46, 46, 46);
+}
+.navbar.ridgeway-nav {
+    background-color: var(--rw-primary-color);
+    color: white;
+    padding: 0;
+}
+
+.navbar a,
+.navbar a.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 1.25rem 1.75rem;
+}
+
+.navbar.ridgeway-nav a,
+.navbar.ridgeway-nav a:active,
+.navbar.ridgeway-nav a:visited,
+.navbar.ridgeway-nav a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar.ridgeway-nav a.nav-link:hover {
+    color: rgb(250, 255, 222);
+    background-color: var(--rw-primary-color);
+    border-bottom: 2px solid rgb(250, 255, 222);
+}
+
+.navbar.ridgeway-nav a.nav-link.active {
+    border-bottom: 2px solid rgb(250, 255, 222);
+    ;
+}
+
+footer.footer {
+    background-color: var(--rw-primary-color);
+    color: white;
+}
+
+footer.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.features-container .card {
+    color: var(--grey-500);
+    border: 1px solid rgba(0,109,250,0.1);
+    box-shadow: 1px 2px 2px rgba(54, 54, 54, 0.1);
+     
+    background: linear-gradient(0deg, rgb(247, 250, 255) 0%, rgba(223, 219, 255, 1) 300%);
+}
+
+.hero {
+    color: white;
+}
+.hero .title {
+    font-size: 4em;
+}
+
+.rw-title {
+    color: var(--rw-primary-color);
+}

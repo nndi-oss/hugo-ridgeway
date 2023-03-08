@@ -1,11 +1,11 @@
-<div class="py-5 mt-5 bg-light ">
+<footer class="footer py-5 mt-5">
   <div class="row grid-nogutter container">
     <div class="col-sm-12 col-md-4">
       <p>Built in Malawi by <br /><a href="https://nndi.cloud">NNDI Ltd</a>
     </div>
     <div class="col-sm-12 col-md-4">
-      <ul class="nav-list">
-        <li>
+      <ul class="nav-list list-unstyled">
+        <li class="nav-item">
           <a href="/">Home</a>
         </li>
         <li>
@@ -17,7 +17,7 @@
       </ul>
     </div>
     <div class="col-sm-12 col-md-4">
-      <ul>
+      <ul class="nav-list list-unstyled">
         {{ $currentPage := . }}
         {{ range first 3 .Site.Menus.footer }}
         <li><a href="{{ .URL }}" {{if $currentPage.IsMenuCurrent "main" . }} class="active" {{end}}>{{ .Name }}</a></li>
@@ -25,4 +25,4 @@
       </ul>
     </div>
   </div>
-</div>
+</footer>
