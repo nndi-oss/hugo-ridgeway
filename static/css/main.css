@@ -63,3 +63,8 @@ footer.footer a {
 .rw-title {
     color: var(--rw-primary-color);
 }
+
+.highlight > pre {
+    border-radius: 7px;
+    padding: 0.35em 0.5em;
+}
